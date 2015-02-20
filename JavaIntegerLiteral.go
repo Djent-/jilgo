@@ -32,7 +32,7 @@ func analyzeString(s string) bool{
 	//lowercase everything for hex and 0x, etc
 	s = strings.ToLower(s)
 	//ignores underscores
-	s = strings.Replace(s, "_", "", -1)
+	//s = strings.Replace(s, "_", "", -1)
 	//ignore a single leading l for type long
 	if strings.HasSuffix(s, "l") {
 		s = strings.TrimSuffix(s, "l")
@@ -57,7 +57,7 @@ func analyzeString(s string) bool{
 
 func checkValidHex(s string) bool {
 	//define valid hex characters
-	vHex := "1234567890abcde"
+	vHex := "1234567890abcdef"
 	//trim leading 0x from string
 	s = strings.TrimPrefix(s, "0x")
 	//if there was nothing after the "0x" then it isn't an integer
